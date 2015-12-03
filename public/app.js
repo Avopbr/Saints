@@ -11,19 +11,28 @@ EduApp.controller('MainCtrl', ['$scope', '$http',
                 $scope.centres = response.data;
             });
 
-        var position;
+        // var position;
         $scope.nearMe = function() {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition($scope.getLocation);
+               navigator.geolocation.getCurrentPosition($scope.getLocation);
             }
         }
 
-        $scope.allValuesEntered = function(){
-            return $scope.centre && $scope.centre.name !== "";
-        }
+        $scope.findEvents = (function(position){
+            
+            alert($scope.target_latitude + ", " + $scope.target_longitude);
+            // do get ajax call --- {
+                // longitude :,
+                // latitude : 
+            // }
+        });
+        // $scope.allValuesEntered = function(){
+        //     return $scope.centre && $scope.centre.name !== "";
+        // }
         $scope.getLocation = function(position) {
-            $scope.latitude = position.coords.latitude;
-            $scope.longitude = position.coords.longitude;
+            //$scope.target_name = position.name;
+            $scope.target_latitude = position.coords.latitude;
+            $scope.target_longitude = position.coords.longitude;
             //$scope.$apply(); //this triggers a $digest
         };
 
@@ -31,6 +40,8 @@ EduApp.controller('MainCtrl', ['$scope', '$http',
 
             var theCenter = {
                 name : centre.name,
+                latitude : centre.latitude,
+                longitude : centre.longitude
             };
 
             $http
