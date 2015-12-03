@@ -18,16 +18,16 @@
 		<br>
 		<button ng-click="nearMe()">Click</button>
 	</div>
-	<form ng-submit="submit()">
-		<input id="hostcenter" placeholder="hostcenter" ng-model="hostcenter">
-		<input id="latitude" placeholder="latitude" ng-model="latitude">
-		<input id="longitude" placeholder="longitude" ng-model="longitude">
-		<input type="submit" name="hostcenterValues" value="Add Host Center">
+	<form>
+		<input id="hostcenter" placeholder="hostcenter" ng-model="centre.name">
+		<input id="latitude" placeholder="latitude" ng-model="centre.latitude">
+		<input id="longitude" placeholder="longitude" ng-model="centre.longitude">
+		<input type="submit" ng-disabled="true" ng-click="addCentre(centre)"  name="hostcenterValues" value="Add Host Center">
 	</form>
-	<ul ng-repeat="venue in venues">
-		<li>Host Center => {{venue.name}}</li>
-		<li>Latitude => {{venue.latitude}}</li>
-		<li>Longitude => {{venue.longitude}}</li>
+	<ul ng-repeat="centre in centres">
+		<li>Host Center => {{centre.name}}</li>
+		<li>Latitude => {{centre.latitude}}</li>
+		<li>Longitude => {{centre.longitude}}</li>
 	</ul>
 	<ul class="center">
 		<li>{{center.latitude}}</li>

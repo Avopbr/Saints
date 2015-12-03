@@ -5,7 +5,11 @@ var mongodb = require('mongodb');
 
 MongoClient = mongodb.MongoClient;
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 app.use(express.static('public'));
+
 app.get('/', function (req, res) {
     res.send('...');
 });
@@ -18,12 +22,12 @@ var url = 'mongodb://localhost:27017/saints_db';
 
 
 app.post('/api/locations', function(req,res){
-		var eventLocation  ;
+		var eventLocation = req.body ;
 	    MongoClient.connect(url, function(err, db) {
         var events = db.collection('events');
         events
-            .insert({eventLocation})
-            .toArray()
+            .insert(eventLocation)
+            
             .then(function(results){
                 res.send(results);
             })
@@ -38,7 +42,6 @@ app.get('/api/locations', function(req,res){
 	  MongoClient.connect(url, function(err, db) {
         var events = db.collection('events');
         events
-            // .insertMany(locationList)
             .find({})
             .toArray()
             .then(function(results){
