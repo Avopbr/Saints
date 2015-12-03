@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html ng-app = "EduApp">
+<head>
+	<title>Edu App</title>
+	<link rel="stylesheet" href="css/styles.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+	<script src="js/geolib.min.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+
+	<div >
+		<input id="name" placeholder="name" ng-model="name">
+		<br>
+		<input id="latitude" placeholder="latitude" ng-model="latitude">
+		<input id="longitude" placeholder="longitude" ng-model="longitude">
+		<br>
+		<br>
+		<button ng-click="nearMe()">Click</button>
+	</div>
+	<form ng-submit="submit()">
+		<input id="hostcenter" placeholder="hostcenter" ng-model="hostcenter">
+		<input id="latitude" placeholder="latitude" ng-model="latitude">
+		<input id="longitude" placeholder="longitude" ng-model="longitude">
+		<input type="submit" name="hostcenterValues" value="Add Host Center">
+	</form>
+	<ul ng-repeat="venue in venues">
+		<li>Host Center => {{venue.name}}</li>
+		<li>Latitude => {{venue.latitude}}</li>
+		<li>Longitude => {{venue.longitude}}</li>
+	</ul>
+	<ul class="center">
+		<li>{{center.latitude}}</li>
+		<li>{{center.longitude}}</li>
+	</ul>
+	<!-- <div id="header">
+	Angular Cellar
+	<button ng:click="addWine()">New Wine</button>
+</div>
+
+<div id="sidebar">
+	<ng:include src="'tpl/wine-list.html'"></ng:include>
+</div>
+
+<div id="content">
+	<ng:view></ng:view>
+</div>
+-->
+<!-- <script src="lib/angular-0.9.19.min.js" ng:autobind></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+-->
+<script src="app.js"></script>
+</body>
+
+</html>

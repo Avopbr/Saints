@@ -1,0 +1,29 @@
+[{
+            "name": "Searidge Park Primary",
+            "latitude": 18.620650,
+            "longitude": -34.062670
+        }, {
+            "name": "Bulumko Secondary School",
+            "latitude": -34.062670,
+            "longitude": 18.620650
+        }, {
+            "name": "Site B Clinic",
+            "latitude": -34.034536,
+            "longitude": 18.667050
+        }, {
+           "name": "Colorado Park Masjid",
+           "latitude": -34.025828,
+           " longitude": 18.585877
+        }, {
+            "name": "Highlands Primary School",
+            "latitude": -34.063402,
+            "longitude": 18.620170
+        }, {
+            "name": "Isilimela Secondary School",
+            "latitude": -33.946362,
+            "longitude": 18.540008
+        }, {
+            "name": "Bonteheuwel Secondary School",
+            "latitude": -33.947786,
+            "longitude": 18.547754
+        }]
