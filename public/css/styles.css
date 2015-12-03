@@ -3,8 +3,13 @@
 	font-family: "Roboto", "Lato", Helvetica;
 	margin: 0;
 }
-nav{
+
+body{
 	background-color: yellow;
+}
+
+nav{
+	background-color: red;
 	height: 60px;
 	text-transform: uppercase;
 	
@@ -15,6 +20,7 @@ nav{
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-end;
+	margin-left: 300px;
 }
 a{
 	display: inline-block;
@@ -24,8 +30,28 @@ a{
 	float: right;
 }
 
-.getCoords{
-	background-color: yellow;
-	border-radius: ;
-	text-transform: uppercase;
+.round-button {
+	width:25%;
+}
+.getCoords {
+	width: 100%;
+	/*height:0;*/
+	/*padding-bottom: 100%;*/
+	padding: 40% 0;
+    border-radius: 50%;
+	border:10px solid #cfdcec;
+    overflow:hidden;
+    text-transform: uppercase;
+    background: #4679BD; 
+    box-shadow: 0 0 3px gray;
+    margin-top: 50px;
+    text-align: center;
+    margin-left: 300px;
+}
+.getCoords:hover {
+	background:#30588e;
+}
+
+.centered {
+	text-align: center;
 }
