@@ -1,0 +1,20 @@
+*{
+	background-color: teal;
+	color: white;
+	font-size: 18px;
+	font-family: "Roboto", "Lato", Helvetica;
+	margin: 0;
+}
+
+li{
+	list-style: none;
+	text-decoration: none;
+	padding: 0.3rem;
+
+}
+ul{
+	border: 2px black solid;
+ }
+.center{
+	color: blue;
+}
