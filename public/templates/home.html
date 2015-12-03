@@ -1,27 +1,4 @@
-	<h1>Events</h1>
-
 	<form>
-		<!-- <input id="name" placeholder="name" ng-model="target_name"> 
-		<br>
-		<input id="latitude" placeholder="latitude" ng-model="target_latitude">
-		<input id="longitude" placeholder="longitude" ng-model="target_longitude">
-		<br>
-		<br>-->
-		<input type="submit" class="hidden" ng-click="nearMe()" value="Get My Coordinates">
+		<input type="submit" class="getCoords" ng-click="nearMe()" value="Get My Coordinates">
 		<input type="submit" ng-click="findEvents()" value="Find events near me" ng-show="located">
 	</form>
-	<!-- <form>
-		<input id="hostcenter" required placeholder="hostcenter" ng-model="centre.name">
-		<input id="latitude" required placeholder="latitude" ng-model="centre.latitude">
-		<input id="longitude" required placeholder="longitude" ng-model="centre.longitude">
-		<input type="submit"  ng-click="addCentre(centre)"  name="hostcenterValues" value="Add Host Center">
-	</form>
-	<ul ng-repeat="centre in centres">
-		<li>Host Center => {{centre.name}}</li>
-		<li>Latitude => {{centre.latitude}}</li>
-		<li>Longitude => {{centre.longitude}}</li>
-	</ul>
-	<ul class="center">
-		<li>{{center.latitude}}</li>
-		<li>{{center.longitude}}</li>
-	</ul> -->

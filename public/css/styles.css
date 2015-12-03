@@ -1,21 +1,31 @@
 *{
-	background-color: teal;
-	color: white;
 	font-size: 18px;
 	font-family: "Roboto", "Lato", Helvetica;
 	margin: 0;
 }
-
-li{
-	list-style: none;
-	text-decoration: none;
-	padding: 0.3rem;
-
-}
-ul{
-	border: 2px black solid;
- }
-.center{
-	color: blue;
+nav{
+	background-color: yellow;
+	height: 60px;
+	text-transform: uppercase;
+	
 }
 
+
+.nav__items{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
+a{
+	display: inline-block;
+	color: #252626;
+	padding: 1rem;
+	font-weight: 700;
+	float: right;
+}
+
+.getCoords{
+	background-color: yellow;
+	border-radius: ;
+	text-transform: uppercase;
+}
