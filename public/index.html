@@ -10,7 +10,7 @@
 <body ng-controller="MainCtrl">
 
 	<form>
-		<input id="name" placeholder="name" ng-model="target_name">
+		<!-- <input id="name" placeholder="name" ng-model="target_name"> -->
 		<br>
 		<input id="latitude" placeholder="latitude" ng-model="target_latitude">
 		<input id="longitude" placeholder="longitude" ng-model="target_longitude">
@@ -25,7 +25,7 @@
 		<input id="longitude" required placeholder="longitude" ng-model="centre.longitude">
 		<input type="submit"  ng-click="addCentre(centre)"  name="hostcenterValues" value="Add Host Center">
 	</form>
-	<ul ng-repeat="centre in centres">
+<!-- 	<ul ng-repeat="centre in centres">
 		<li>Host Center => {{centre.name}}</li>
 		<li>Latitude => {{centre.latitude}}</li>
 		<li>Longitude => {{centre.longitude}}</li>
@@ -33,6 +33,12 @@
 	<ul class="center">
 		<li>{{center.latitude}}</li>
 		<li>{{center.longitude}}</li>
+	</ul> -->
+	<ul ng-repeat="orderedCentre in orderedCentres">
+		<li>Host Center => {{orderedCentre.name}}</li>
+		<li>Latitude => {{orderedCentre.latitude}}</li>
+		<li>Longitude => {{orderedCentre.longitude}}</li>
+		<li>Distance (Kms) => {{orderedCentre.distance}}</li>
 	</ul>
 	<!-- <div id="header">
 	Angular Cellar
