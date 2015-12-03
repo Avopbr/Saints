@@ -75,6 +75,6 @@ app.get('/api/locations/:id', function(req, res){
 
 })
 
-app.listen(3001, function(){
-    console.log('app running on http://localhost:3001');
+app.listen(3000, function(){
+    console.log('app running on http://localhost:3000');
 });
