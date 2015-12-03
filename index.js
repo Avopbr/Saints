@@ -3,6 +3,8 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
 
+var ObjectID = mongodb.ObjectID;
+
 MongoClient = mongodb.MongoClient;
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -39,11 +41,28 @@ app.post('/api/locations', function(req,res){
 });
 
 app.get('/api/locations', function(req,res){
-	  MongoClient.connect(url, function(err, db) {
+      MongoClient.connect(url, function(err, db) {
         var events = db.collection('events');
         events
             .find({})
             .toArray()
+            .then(function(results){
+                res.send(results);
+            })
+            .catch(function(err){
+                // log the error to the console for now
+                console.log(err);
+                res.send({});
+            });
+    });
+
+});
+
+app.get('/api/locations/:id', function(req, res){
+	  MongoClient.connect(url, function(err, db) {
+        var events = db.collection('events');
+        events
+            .findOne({_id : ObjectID(req.params.id)})
             .then(function(results){
                 res.send(results);
             })
