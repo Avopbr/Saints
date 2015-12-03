@@ -1,8 +1,59 @@
-var EduApp = angular.module("EduApp", []);
-EduApp.controller('MainCtrl', ['$scope', '$http',
-    function($scope, $http) {
+var EduApp = angular.module("EduApp", ['ngRoute']);
+
+EduApp.controller('EventDetailsCtrl', [
+    '$scope', 
+    '$routeParams',
+    '$http',
+    function($scope, $routeParams, $http){
+        $scope.eventId = $routeParams.id;
+
+        $http
+            .get('api/locations/' + $scope.eventId)
+            .then(function(result){
+                $scope.name = result.data.name
+            });
+}]);
+
+EduApp.controller('EventsCtrl', [
+    '$scope', 
+    '$routeParams',
+    '$http',
+    function($scope, $routeParams, $http){
+        
+        var latitude = $routeParams.latitude;
+        var longitude = $routeParams.longitude;
+
+        $http.get("/api/locations")
+                .then(function(response) {
+                    $scope.centres = response.data;
+                    var centresArray = $scope.centres;
+                    var locationMap = {};
+
+                    $scope.centres.forEach(function(centre){
+                        locationMap[centre.name] = { latitude : centre.latitude, longitude : centre.longitude, id : centre._id}
+                    });
+
+                    var orderedCentres = geolib.orderByDistance({
+                        latitude: latitude,
+                        longitude: longitude
+                    }, locationMap);
+
+                    $scope.orderedCentres = orderedCentres.map(function(centre){
+                        centre.name = centre.key;
+                        centre.distance = centre.distance / 1000;
+                        centre._id = locationMap[centre.name].id;
+                        delete centre.key;
+                        return centre;
+                    })
+                });
+}]);
+
+
+EduApp.controller('MainCtrl', ['$scope', '$http', '$routeParams', '$location',
+    function($scope, $http, $routeParams, $location) {
 
         // $scope.center = (geolib.getCenter($scope.venues));
+        
 
         $scope.centres = [];
 
@@ -23,60 +74,24 @@ EduApp.controller('MainCtrl', ['$scope', '$http',
             console.log($scope.target_latitude + ", " + $scope.target_longitude);
             var target_latitude = $scope.target_latitude;
             var target_longitude = $scope.target_longitude;
-            // do get ajax call --- {
-            // longitude :,
-            // latitude : 
-            // }
-            $http.get("/api/locations")
-                .then(function(response) {
-                    $scope.centres = response.data;
-                    var centresArray = $scope.centres;
-
-                    console.log(JSON.stringify($scope.centres));
-
-                    
-                    console.log(centresArray);
-                    console.log(typeof centresArray);
-                    // coords array
-                    console.log(target_longitude,target_latitude);
-
-                    
-                    var locationMap = {};
-
-                    $scope.centres.forEach(function(centre){
-                        locationMap[centre.name] = { latitude : centre.latitude, longitude : centre.longitude}
-                    });
-
-                    // console.log(JSON.stringify(locationMap));
-
-                    var orderedCentres = geolib.orderByDistance({
-                        latitude: target_latitude,
-                        longitude: target_longitude
-                    }, locationMap);
-
-                    console.log(JSON.stringify(orderedCentres));
-
-                    orderedCentres = orderedCentres.map(function(centre){
-                        centre.name = centre.key;
-                        centre.distance = centre.distance / 1000;
-                        delete centre.key;
-                        return centre;
-                    })
-
-                    console.log($scope.orderedCentres = orderedCentres);
-
-                    // console.log(JSON.stringify(orderedCentres));
-
-                });
+            
+            $location.path("/events/" + target_latitude + "/" + target_longitude );
         });
+        
         // $scope.allValuesEntered = function(){
         //     return $scope.centre && $scope.centre.name !== "";
         // }
         $scope.getLocation = function(position) {
             //$scope.target_name = position.name;
+            
             $scope.target_latitude = position.coords.latitude;
             $scope.target_longitude = position.coords.longitude;
+            $scope.located = true;
+
             $scope.$apply(); //this triggers a $digest
+
+            //$location.path("/events/" + $scope.target_latitude + "/" + $scope.target_longitude);
+
         };
 
         $scope.addCentre = function(centre) {
@@ -96,9 +111,35 @@ EduApp.controller('MainCtrl', ['$scope', '$http',
                 .catch(function(e) {
                     alert(JSON.stringify(e));
                 });
-
-
         }
 
     }
-])
+]);
+
+EduApp.config(function($routeProvider){
+
+    $routeProvider.when('/', {
+        templateUrl:'templates/home.html',
+        controller : 'MainCtrl'
+    }).when('/events', {
+        templateUrl:'templates/events.html',
+        controller : 'MainCtrl'
+    })
+    .when('/legal', {
+        templateUrl:'templates/legal.html',
+        controller : 'MainCtrl'
+    }).when('/about', {
+        templateUrl:'templates/about.html',
+        controller : 'MainCtrl'
+    }).when('/contact', {
+        templateUrl:'templates/contact.html',
+        controller : 'MainCtrl'
+    }).when('/events/:id', {
+        templateUrl:'templates/event_details.html',
+        controller : 'EventDetailsCtrl'
+    }).when('/events/:latitude/:longitude', {
+        templateUrl:'templates/events.html',
+        controller : 'EventsCtrl'
+    });
+
+});

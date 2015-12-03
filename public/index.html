@@ -4,42 +4,24 @@
 	<title>Edu App</title>
 	<link rel="stylesheet" href="css/styles.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.0/angular-route.js"></script>
 	<script src="js/geolib.min.js"></script>
 </head>
 
-<body ng-controller="MainCtrl">
+<body >
 
-	<form>
-		<!-- <input id="name" placeholder="name" ng-model="target_name"> -->
-		<br>
-		<input id="latitude" placeholder="latitude" ng-model="target_latitude">
-		<input id="longitude" placeholder="longitude" ng-model="target_longitude">
-		<br>
-		<br>
-		<input type="submit" ng-click="nearMe()" value="Get My Coordinates">
-		<input type="submit" ng-click="findEvents()" value="Find events near me">
-	</form>
-	<form>
-		<input id="hostcenter" required placeholder="hostcenter" ng-model="centre.name">
-		<input id="latitude" required placeholder="latitude" ng-model="centre.latitude">
-		<input id="longitude" required placeholder="longitude" ng-model="centre.longitude">
-		<input type="submit"  ng-click="addCentre(centre)"  name="hostcenterValues" value="Add Host Center">
-	</form>
-<!-- 	<ul ng-repeat="centre in centres">
-		<li>Host Center => {{centre.name}}</li>
-		<li>Latitude => {{centre.latitude}}</li>
-		<li>Longitude => {{centre.longitude}}</li>
-	</ul>
-	<ul class="center">
-		<li>{{center.latitude}}</li>
-		<li>{{center.longitude}}</li>
-	</ul> -->
-	<ul ng-repeat="orderedCentre in orderedCentres">
-		<li>Host Center => {{orderedCentre.name}}</li>
-		<li>Latitude => {{orderedCentre.latitude}}</li>
-		<li>Longitude => {{orderedCentre.longitude}}</li>
-		<li>Distance (Kms) => {{orderedCentre.distance}}</li>
-	</ul>
+
+	<div ng-controller="MainCtrl" class="container" >
+		<nav>
+		<a href="#/">Home</a>
+		<a href="#/about">About</a>
+		<a href="#/legal">Legal</a>
+		<a href="#/contact">Contact</a>
+
+	</nav>
+        <ng-view></ng-view>
+        
+    </div>
 	<!-- <div id="header">
 	Angular Cellar
 	<button ng:click="addWine()">New Wine</button>
