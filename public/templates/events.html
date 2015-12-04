@@ -1,11 +1,12 @@
-<h1>Or something...</h1>
-<ul ng-repeat="orderedCentre in orderedCentres">
-	<li>
-		<a href="#/events/{{orderedCentre._id}}">
-		Host Center => {{orderedCentre.name}}
-		<!-- <li>Latitude => {{orderedCentre.latitude}}</li>
-		<li>Longitude => {{orderedCentre.longitude}}</li> -->
-		Distance (Kms) => {{orderedCentre.distance}}
+<h1>Events around you ...</h1>
+<div ng-repeat="orderedCentre in orderedCentres" class="col-md-4 items">
+	<div class="card">
+		<a class="image__a" href="#/events/{{orderedCentre._id}}">
+			
+			<p>Distance (Kms) : {{orderedCentre.distance}}</p>
+			<img src="{{orderedCentre.image}}" class="image img-responsive" alt="">
+			<p class="host">Event : {{orderedCentre.name}}</p>
 		</a>
-	</li>
-</ul>
+	</div>
+</div>
+

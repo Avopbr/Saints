@@ -1,9 +1,13 @@
-<h1>Event Details</h1>
-<p>
-	{{name}}
-	{{description}}
-	{{date}}
-	{{time}}
-	{{venue}}
-	
-</p>
+<div class="row well">
+	<div class="details__event col-md-7">
+		<h1>Event Details</h1>
+		<p>Event name : {{name}}</p>
+		<p>Description : {{description}}</p>
+		<p>When : {{date}}</p>
+		<p>Time : {{time}}</p>
+		<p>Venue : {{venue}}</p>
+	</div>
+	<div class="event__image col-md-5">
+		<img class="img-responsive " src="{{image}}" alt=""></div>
+	<!-- /.event__image -->
+</div>

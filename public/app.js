@@ -10,7 +10,12 @@ EduApp.controller('EventDetailsCtrl', [
         $http
             .get('api/locations/' + $scope.eventId)
             .then(function(result){
-                $scope.name = result.data.name
+                $scope.name = result.data.name;
+                $scope.venue = result.data.venue;
+                $scope.description = result.data.description;
+                $scope.date = result.data.date;
+                $scope.time = result.data.time;
+                $scope.image = result.data.image;
             });
 }]);
 
@@ -30,7 +35,7 @@ EduApp.controller('EventsCtrl', [
                     var locationMap = {};
 
                     $scope.centres.forEach(function(centre){
-                        locationMap[centre.name] = { latitude : centre.latitude, longitude : centre.longitude, id : centre._id}
+                        locationMap[centre.name] = { latitude : centre.latitude, longitude : centre.longitude, id : centre._id, image: centre.image }
                     });
 
                     var orderedCentres = geolib.orderByDistance({
@@ -39,7 +44,9 @@ EduApp.controller('EventsCtrl', [
                     }, locationMap);
 
                     $scope.orderedCentres = orderedCentres.map(function(centre){
+                        alert()
                         centre.name = centre.key;
+                        centre.image = locationMap[centre.name].image;
                         centre.distance = centre.distance / 1000;
                         centre._id = locationMap[centre.name].id;
                         delete centre.key;
@@ -77,7 +84,7 @@ EduApp.controller('MainCtrl', ['$scope', '$http', '$routeParams', '$location',
             
             $location.path("/events/" + target_latitude + "/" + target_longitude );
         });
-        
+
         // $scope.allValuesEntered = function(){
         //     return $scope.centre && $scope.centre.name !== "";
         // }
