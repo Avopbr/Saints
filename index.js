@@ -18,11 +18,6 @@ app.get('/', function (req, res) {
 
 var url = 'mongodb://localhost:27017/saints_db';
 
-// app.get('/api/nkosi', function(req, res){
-
-// });
-
-
 app.post('/api/locations', function(req,res){
 		var eventLocation = req.body ;
 	    MongoClient.connect(url, function(err, db) {
@@ -50,7 +45,6 @@ app.get('/api/locations', function(req,res){
                 res.send(results);
             })
             .catch(function(err){
-                // log the error to the console for now
                 console.log(err);
                 res.send({});
             });
@@ -67,7 +61,6 @@ app.get('/api/locations/:id', function(req, res){
                 res.send(results);
             })
             .catch(function(err){
-                // log the error to the console for now
                 console.log(err);
                 res.send({});
             });
@@ -75,6 +68,6 @@ app.get('/api/locations/:id', function(req, res){
 
 })
 
-app.listen(3000, function(){
-    console.log('app running on http://localhost:3000');
+app.listen(3001, function(){
+    console.log('app running on http://localhost:3001');
 });

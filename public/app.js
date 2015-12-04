@@ -84,20 +84,12 @@ EduApp.controller('MainCtrl', ['$scope', '$http', '$routeParams', '$location',
             $location.path("/events/" + target_latitude + "/" + target_longitude );
         });
 
-        // $scope.allValuesEntered = function(){
-        //     return $scope.centre && $scope.centre.name !== "";
-        // }
         $scope.getLocation = function(position) {
             //$scope.target_name = position.name;
-            
             $scope.target_latitude = position.coords.latitude;
             $scope.target_longitude = position.coords.longitude;
             $scope.located = true;
-
             $scope.$apply(); //this triggers a $digest
-
-            //$location.path("/events/" + $scope.target_latitude + "/" + $scope.target_longitude);
-
         };
 
         $scope.addCentre = function(centre) {
