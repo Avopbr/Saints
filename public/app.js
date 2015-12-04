@@ -44,7 +44,6 @@ EduApp.controller('EventsCtrl', [
                     }, locationMap);
 
                     $scope.orderedCentres = orderedCentres.map(function(centre){
-                        alert()
                         centre.name = centre.key;
                         centre.image = locationMap[centre.name].image;
                         centre.distance = centre.distance / 1000;
