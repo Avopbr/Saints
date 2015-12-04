@@ -35,7 +35,7 @@ We then met Mazwi who is a local Hip-Hop Dj. Just like Xolani, he felt more coul
 We asked Mazwi to give us some time while we worked on a solution.
 
 ## Realization
-###We came to a realisation that a lot of important events were being poorly attended due to lack of advertising. The events ranged from talent shows, comedy shows and sometimes special events in which international dignitaries spoke on matters of international importantance.
+We came to a realisation that a lot of important events were being poorly attended due to lack of advertising. The events ranged from talent shows, comedy shows and sometimes special events in which international dignitaries spoke on matters of international importantance.
 
 Our Solution
 
