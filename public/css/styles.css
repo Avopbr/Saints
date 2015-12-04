@@ -105,3 +105,11 @@ a:focus {
 }
 
 *{ -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important; }
+
+
+.logo{
+    font-family: 'Pacifico', cursive;
+    font-weight: 500;
+    font-size:  60px;
+    color: #009688;
+}
