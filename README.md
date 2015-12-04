@@ -7,20 +7,20 @@
 
 
 ## Tech used :
-AngularJs
-MongoDB
-Express
-Running on Node v8
+### AngularJs
+### MongoDB
+### Express
+### Running on Node v8
 ## To run the app
-Clone this repo
-From root, do the following:
+### Clone this repo
+### From root, do the following:
 ```mongoimport --db saints_db --collection events --file data.json --jsonArray
 ```npm install
 
-$ mongod 
-$ mongo
+### $ mongod 
+### $ mongo
 
-Then go to the browser(localhost:3001)
+## Then go to the browser(localhost:3001)
 
 ## Pitch
 We are team Saints. 
@@ -34,8 +34,8 @@ We asked Xolani to give us some time while we worked on a solution.
 We then met Mazwi who is a local Hip-Hop Dj. Just like Xolani, he felt more could be done on getting the word out. He told us he recently lost a lot of money after he booked a Dj from the Eastern Cape only to have a poor turnout.
 We asked Mazwi to give us some time while we worked on a solution.
 
-Realization
-We came to a realisation that a lot of important events were being poorly attended due to lack of advertising. The events ranged from talent shows, comedy shows and sometimes special events in which international dignitaries spoke on matters of international importantance.
+## Realization
+###We came to a realisation that a lot of important events were being poorly attended due to lack of advertising. The events ranged from talent shows, comedy shows and sometimes special events in which international dignitaries spoke on matters of international importantance.
 
 Our Solution
 
