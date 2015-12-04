@@ -1,0 +1,62 @@
+[  
+   {  
+      "name":"Ifani Live",
+      "latitude":"-33.939704",
+      "longitude":"18.475442",
+      "description":"some hip hop event",
+      "date":"12-12-2015",
+      "time":1600,
+      "venue":"delft stadium",
+      "image":"http://www.dispatchlive.co.za/wp-content/uploads/2015/06/Ifani01.jpg"
+   },
+   {  
+      "name":"Zahara Live",
+      "latitude":"-34.052962",
+      "longitude":"18.688066",
+      "description":"This is one of the biggest music festival ever held in the township of Khayelitsha as Abadwanguzeli Promotions are going to bring finest artists from Jazz, Soul, Hip-hop and House DJ's.Line up *Zahara *Cassper Nyovest *Heavy K *Abadwanguzeli *Simphiwe dana and many more ...",
+      "date":"2015-12-27",
+      "time":1600,
+      "venue":"Mandela Park Stadium",
+      "image":"http://www.polokwaneshow.co.za/show/images/Zahara.jpg"
+   },
+   {  
+      "name":"Soccer Match",
+      "latitude":"-33.971428",
+      "longitude":"18.552024",
+      "description":"This is a special soccer match between two local big rivalries which is a final match for Heineken Cup Mighty Warriors vs Black Kings. Come and witness the beauty of two soccerball masterminds clashing for a R50,000 prize come and enjoy yourself. Admissio * R30 ticket",
+      "date":"22-12-2015",
+      "time":1000,
+      "venue":"Cloetesville Sports Grounds",
+      "image":"http://www.capetown.travel/uploads/legacy/peeps_mtn.jpg"
+   },
+   {  
+      "name":"Parenting(Talk)",
+      "latitude":"-34.052961",
+      "longitude":"18.688066",
+      "description":"This is the gathering of parents and kids where there will different speeche(s) from experienced and unexperienced mothers sharing the difficulties of raising a family and important factors one should consider in order to raise a powerful peaceful family.",
+      "date":"20-12-2015",
+      "time":1100,
+      "venue":"Saartjie Baartman Centre",
+      "image":"https://unlphotojournalismdominicanrepublic.files.wordpress.com/2013/12/131227_reed_dr_teenage-pregnancy_neighborhoods_230_.jpg"
+   },
+   {  
+      "name":"Arts and Culture",
+      "latitude":"-34.041761",
+      "longitude":"18.699975",
+      "description":"This is the event brought to you by Department of Arts and Culture where Community-based cultural events bring people together in many ways that express their culture, traditions and values. From age-old ceremonies of commitment such as pride promoting collaboratively, neighborhood murals, art that addresses people's need for community. The arts will frequently interrelate in this event.",
+      "date":"20-01-2016",
+      "time":1200,
+      "venue":"Khayelitsha No 1 Senior Secondary School",
+      "image":"https://ishtodo.files.wordpress.com/2013/07/african-dance-class.jpg"
+   },
+   {  
+      "name":"Comedy Show",
+      "latitude":"-33.994291",
+      "longitude":"18.675470",
+      "description":"LionsGate Entertainment brings you the best of local Comedians to clash in Comedy competition where there will be different Comedians to make you laugh all day the winner will be chosen by you spectators of the day come and witness the best of jokes you will find around town.",
+      "date":"18-12-2015",
+      "time":1300,
+      "venue":"Afro Lounge",
+      "image":"http://www.artlink.co.za/uploadimages/images_595/The_smokers_get_the_garden_large.jpg"
+   }
+]

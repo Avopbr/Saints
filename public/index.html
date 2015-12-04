@@ -2,55 +2,30 @@
 <html ng-app = "EduApp">
 <head>
 	<title>Edu App</title>
-	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.0/angular-route.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.1/css/bootstrap-material-design.css">
+	<link rel="stylesheet" href="css/styles.css" />
 	<script src="js/geolib.min.js"></script>
 </head>
 
-<body ng-controller="MainCtrl">
-
-	<div >
-		<input id="name" placeholder="name" ng-model="name">
-		<br>
-		<input id="latitude" placeholder="latitude" ng-model="latitude">
-		<input id="longitude" placeholder="longitude" ng-model="longitude">
-		<br>
-		<br>
-		<button ng-click="nearMe()">Click</button>
+<body >
+	<nav>
+		<div class="nav__items navbar navbar-default">
+			<a href="#/">Home</a>
+			<a href="#/about">About</a>
+			<a href="#/legal">Legal</a>
+			<a href="#/contact">Contact</a>
+		</div>
+		<!-- /.nav__items -->
+	</nav>
+	<div ng-controller="MainCtrl" class="container" >
+		<ng-view></ng-view>
 	</div>
-	<form>
-		<input id="hostcenter" placeholder="hostcenter" ng-model="centre.name">
-		<input id="latitude" placeholder="latitude" ng-model="centre.latitude">
-		<input id="longitude" placeholder="longitude" ng-model="centre.longitude">
-		<input type="submit" ng-disabled="true" ng-click="addCentre(centre)"  name="hostcenterValues" value="Add Host Center">
-	</form>
-	<ul ng-repeat="centre in centres">
-		<li>Host Center => {{centre.name}}</li>
-		<li>Latitude => {{centre.latitude}}</li>
-		<li>Longitude => {{centre.longitude}}</li>
-	</ul>
-	<ul class="center">
-		<li>{{center.latitude}}</li>
-		<li>{{center.longitude}}</li>
-	</ul>
-	<!-- <div id="header">
-	Angular Cellar
-	<button ng:click="addWine()">New Wine</button>
-</div>
-
-<div id="sidebar">
-	<ng:include src="'tpl/wine-list.html'"></ng:include>
-</div>
-
-<div id="content">
-	<ng:view></ng:view>
-</div>
--->
-<!-- <script src="lib/angular-0.9.19.min.js" ng:autobind></script>
-<script src="js/services.js"></script>
-<script src="js/controllers.js"></script>
--->
-<script src="app.js"></script>
+	<script src="app.js"></script>
 </body>
-
 </html>
